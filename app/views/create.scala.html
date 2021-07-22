@@ -1,0 +1,59 @@
+@()
+
+  @main("create") {
+  <div class="CreateAccount">
+  <div>
+    <label><b>Username</b></label>
+    <input id="username" type="text" v-model = "input.username" placeholder="Enter Username" required>
+  </div>
+  <div>
+    <label><b>Password</b></label>
+    <input id="password" type="password" v-model = "input.password" placeholder="Enter Password" required>
+  </div>
+  <div>
+    <label><b>First Name</b></label>
+    <input id="firstname" type="text" v-model = "input.firstname" placeholder="Enter First Name"  required>
+  </div>
+  <div>
+    <label><b>Last Name</b></label>
+    <input id="lastname" type="text" v-model = "input.lastname" placeholder="Enter Last Name" required>
+  </div>
+  <div>
+    <label><b>Email</b></label>
+    <input id="email" type="email" v-model = "input.email" placeholder="Enter Email" required>
+  </div>
+    <div>
+    <label><b>Phone</b></label>
+    <input id="phoneNumber" type="text" v-model = "input.phone" placeholder="Enter Phone number" required>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+
+  <button onclick="window.location.href = '/newAccount?name='+document.getElementById('firstname').value
+          +' '+document.getElementById('lastname').value
+          +'&phone='+document.getElementById('phoneNumber').value+'&email='+document.getElementById('email').value+'&username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Create Account</button>
+  <div class="container" style="background-color:#f1f1f1">
+    <button onclick="window.location.href='/'">Cancel</button>
+    <button v-on:click="receiveData()">view accounts</button>
+    <a href="#">Forgot password?</a>
+  </div>
+  </div>
+  <script>
+          String.prototype.hashCode = function() {
+            var hash = 0;
+            if (this.length == 0) {
+              return hash;
+            }
+            for (var i = 0; i < this.length; i++) {
+              var char = this.charCodeAt(i);
+              hash = ((hash<<5)-hash)+char;
+              hash = hash & hash; // Convert to 32bit integer
+            }
+            return hash;
+          }
+  </script>
+  }
