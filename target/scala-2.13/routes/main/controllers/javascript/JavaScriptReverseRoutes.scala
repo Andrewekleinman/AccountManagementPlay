@@ -37,12 +37,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:15
     def newAccount: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.newAccount",
       """
         function(name0,phone1,email2,username3,password4) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "newAccount" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("name", name0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("phone", phone1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username3), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password4)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "newAccount/{name,phone,email,username,password}" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("name", name0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("phone", phone1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username3), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password4)])})
         }
       """
     )
@@ -99,7 +99,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -107,7 +107,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

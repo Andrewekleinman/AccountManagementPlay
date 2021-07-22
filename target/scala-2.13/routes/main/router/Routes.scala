@@ -14,7 +14,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:7
   HomeController_1: controllers.HomeController,
-  // @LINE:19
+  // @LINE:20
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -23,7 +23,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:7
     HomeController_1: controllers.HomeController,
-    // @LINE:19
+    // @LINE:20
     Assets_0: controllers.Assets
   ) = this(errorHandler, HomeController_1, Assets_0, "/")
 
@@ -41,11 +41,11 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.createOrLog()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """create""", """controllers.HomeController.create()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """log""", """controllers.HomeController.log()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """newAccount""", """controllers.HomeController.newAccount(name:String, phone:String, email:String, username:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logAttempt""", """controllers.HomeController.logAttempt(username:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """explore""", """controllers.HomeController.explore()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tutorial""", """controllers.HomeController.tutorial()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """nothing""", """controllers.HomeController.nothing()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """newAccount/{name,phone,email,username,password}""", """controllers.HomeController.newAccount(name:String, phone:String, email:String, username:String, password:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -108,29 +108,11 @@ class Routes(
     )
   )
 
-  // @LINE:10
-  private[this] lazy val controllers_HomeController_newAccount3_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("newAccount")))
-  )
-  private[this] lazy val controllers_HomeController_newAccount3_invoker = createInvoker(
-    HomeController_1.newAccount(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HomeController",
-      "newAccount",
-      Seq(classOf[String], classOf[String], classOf[String], classOf[String], classOf[String]),
-      "GET",
-      this.prefix + """newAccount""",
-      """""",
-      Seq()
-    )
-  )
-
   // @LINE:11
-  private[this] lazy val controllers_HomeController_logAttempt4_route = Route("GET",
+  private[this] lazy val controllers_HomeController_logAttempt3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logAttempt")))
   )
-  private[this] lazy val controllers_HomeController_logAttempt4_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_logAttempt3_invoker = createInvoker(
     HomeController_1.logAttempt(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -139,16 +121,16 @@ class Routes(
       Seq(classOf[String], classOf[String]),
       "GET",
       this.prefix + """logAttempt""",
-      """""",
+      """GET     /newAccount                         controllers.HomeController.newAccount(name,phone,email,username,password)""",
       Seq()
     )
   )
 
   // @LINE:12
-  private[this] lazy val controllers_HomeController_explore5_route = Route("GET",
+  private[this] lazy val controllers_HomeController_explore4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("explore")))
   )
-  private[this] lazy val controllers_HomeController_explore5_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_explore4_invoker = createInvoker(
     HomeController_1.explore(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -163,10 +145,10 @@ class Routes(
   )
 
   // @LINE:13
-  private[this] lazy val controllers_HomeController_tutorial6_route = Route("GET",
+  private[this] lazy val controllers_HomeController_tutorial5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tutorial")))
   )
-  private[this] lazy val controllers_HomeController_tutorial6_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_tutorial5_invoker = createInvoker(
     HomeController_1.tutorial(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -181,10 +163,10 @@ class Routes(
   )
 
   // @LINE:14
-  private[this] lazy val controllers_HomeController_nothing7_route = Route("GET",
+  private[this] lazy val controllers_HomeController_nothing6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("nothing")))
   )
-  private[this] lazy val controllers_HomeController_nothing7_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_nothing6_invoker = createInvoker(
     HomeController_1.nothing(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -198,7 +180,25 @@ class Routes(
     )
   )
 
-  // @LINE:19
+  // @LINE:15
+  private[this] lazy val controllers_HomeController_newAccount7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("newAccount/{name,phone,email,username,password}")))
+  )
+  private[this] lazy val controllers_HomeController_newAccount7_invoker = createInvoker(
+    HomeController_1.newAccount(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "newAccount",
+      Seq(classOf[String], classOf[String], classOf[String], classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """newAccount/{name,phone,email,username,password}""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:20
   private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -237,37 +237,37 @@ class Routes(
         controllers_HomeController_log2_invoker.call(HomeController_1.log())
       }
   
-    // @LINE:10
-    case controllers_HomeController_newAccount3_route(params@_) =>
-      call(params.fromQuery[String]("name", None), params.fromQuery[String]("phone", None), params.fromQuery[String]("email", None), params.fromQuery[String]("username", None), params.fromQuery[String]("password", None)) { (name, phone, email, username, password) =>
-        controllers_HomeController_newAccount3_invoker.call(HomeController_1.newAccount(name, phone, email, username, password))
-      }
-  
     // @LINE:11
-    case controllers_HomeController_logAttempt4_route(params@_) =>
+    case controllers_HomeController_logAttempt3_route(params@_) =>
       call(params.fromQuery[String]("username", None), params.fromQuery[String]("password", None)) { (username, password) =>
-        controllers_HomeController_logAttempt4_invoker.call(HomeController_1.logAttempt(username, password))
+        controllers_HomeController_logAttempt3_invoker.call(HomeController_1.logAttempt(username, password))
       }
   
     // @LINE:12
-    case controllers_HomeController_explore5_route(params@_) =>
+    case controllers_HomeController_explore4_route(params@_) =>
       call { 
-        controllers_HomeController_explore5_invoker.call(HomeController_1.explore())
+        controllers_HomeController_explore4_invoker.call(HomeController_1.explore())
       }
   
     // @LINE:13
-    case controllers_HomeController_tutorial6_route(params@_) =>
+    case controllers_HomeController_tutorial5_route(params@_) =>
       call { 
-        controllers_HomeController_tutorial6_invoker.call(HomeController_1.tutorial())
+        controllers_HomeController_tutorial5_invoker.call(HomeController_1.tutorial())
       }
   
     // @LINE:14
-    case controllers_HomeController_nothing7_route(params@_) =>
+    case controllers_HomeController_nothing6_route(params@_) =>
       call { 
-        controllers_HomeController_nothing7_invoker.call(HomeController_1.nothing())
+        controllers_HomeController_nothing6_invoker.call(HomeController_1.nothing())
       }
   
-    // @LINE:19
+    // @LINE:15
+    case controllers_HomeController_newAccount7_route(params@_) =>
+      call(params.fromQuery[String]("name", None), params.fromQuery[String]("phone", None), params.fromQuery[String]("email", None), params.fromQuery[String]("username", None), params.fromQuery[String]("password", None)) { (name, phone, email, username, password) =>
+        controllers_HomeController_newAccount7_invoker.call(HomeController_1.newAccount(name, phone, email, username, password))
+      }
+  
+    // @LINE:20
     case controllers_Assets_versioned8_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned8_invoker.call(Assets_0.versioned(path, file))

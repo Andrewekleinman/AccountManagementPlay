@@ -59,7 +59,7 @@ Seq[Any](format.raw/*1.4*/("""
 
 
   <button onclick="window.location.href = '/newAccount?name='+document.getElementById('firstname').value
-          +' '+document.getElementById('lastname').value
+          +document.getElementById('lastname').value
           +'&phone='+document.getElementById('phoneNumber').value+'&email='+document.getElementById('email').value+'&username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Create Account</button>
   <div class="container" style="background-color:#f1f1f1">
     <button onclick="window.location.href='/'">Cancel</button>
@@ -98,8 +98,8 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/create.scala.html
-                  HASH: d859f7c68d5786f327f9633c97dac36b801f49b9
-                  MATRIX: 723->1|819->3|851->10|873->24|912->26|942->30|2743->1803|2772->1804|2814->1818|2891->1867|2920->1868|2964->1884|3018->1910|3047->1911|3089->1925|3155->1963|3184->1964|3228->1980|3408->2132|3437->2133|3479->2147|3531->2171|3560->2172|3591->2176|3635->2190
+                  HASH: a4f1366c94be4154886091854d44dc1f1f56a8ec
+                  MATRIX: 723->1|819->3|851->10|873->24|912->26|942->30|2739->1799|2768->1800|2810->1814|2887->1863|2916->1864|2960->1880|3014->1906|3043->1907|3085->1921|3151->1959|3180->1960|3224->1976|3404->2128|3433->2129|3475->2143|3527->2167|3556->2168|3587->2172|3631->2186
                   LINES: 21->1|26->1|28->3|28->3|28->3|29->4|70->45|70->45|71->46|72->47|72->47|73->48|74->49|74->49|75->50|75->50|75->50|76->51|79->54|79->54|80->55|81->56|81->56|82->57|83->58
                   -- GENERATED --
               */

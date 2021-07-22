@@ -128,6 +128,4 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     var numberProto = phoneUtil.parse("phone_number", "")
     phoneUtil.isValidNumber(numberProto) == true
   }
-
-
 }
