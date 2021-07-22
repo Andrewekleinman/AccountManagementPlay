@@ -1,8 +1,12 @@
 package controllers
 
+import com.google.i18n.phonenumbers.PhoneNumberUtil
+import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber
+
 import javax.inject._
 import play.api._
 import play.api.mvc._
+import play.api.routing.sird.?
 
 import java.sql.{Connection, DriverManager, ResultSet}
 import scala.language.postfixOps
@@ -23,6 +27,9 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
 
 
   }
+  def nothing()= Action { implicit request: Request[AnyContent] =>
+    Ok
+  }
   def createOrLog() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.createorlog())
   }
@@ -42,7 +49,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     try {
       val stm = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
         var rs = stm.executeQuery("SELECT * from users")
-
         while (rs.next) {
           if (rs.getString("username") == username) {
             if(rs.getString("password") == password){
@@ -50,9 +56,6 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
             }
           }
         }
-
-         // Ok(views.html.log())
-
     } finally {
       conn.close()
     }
@@ -69,36 +72,41 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     val con_st = "jdbc:postgresql://localhost:5433/users?user=postgres&password=XSW@3edc"
     val conn = DriverManager.getConnection(con_st)
     var unique = true;
+    var created = false;
     try {
       val stm = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
-      if(username != null && phone != null && email != null && password != null && name != null) {
+      if (username != "" && phone != "" && email != "" && password != "" && name != "") {
         //if(phoneFormat(phone)){
-        //if(emailFormat(email)){
-        var rs = stm.executeQuery("SELECT * from users")
-
-        while (rs.next) {
-          if (rs.getString("username") == username) {
-            unique = false
-          }
-        }
-        if (unique) {
-          stm.execute("insert into users (name, phoneNumber, email, username, password) values ('" + name + "', '" + phone + "', '" + email + "', '" + username + "', '" + password + "');")
-
-          rs = stm.executeQuery("SELECT * from users")
+        if (checkEmail(email)) {
+          var rs = stm.executeQuery("SELECT * from users")
 
           while (rs.next) {
-            println(rs.getString("name") + ", " + rs.getString("phoneNumber") + ", " + rs.getString("email") + ", " + rs.getString("username") + ", " + rs.getString("password"))
+            if (rs.getString("username") == username) {
+              unique = false
+            }
           }
-          Ok(views.html.log())
+          if (unique) {
+            stm.execute("insert into users (name, phoneNumber, email, username, password) values ('" + name + "', '" + phone + "', '" + email + "', '" + username + "', '" + password + "');")
+            rs = stm.executeQuery("SELECT * from users")
+
+            while (rs.next) {
+              println(rs.getString("name") + ", " + rs.getString("phoneNumber") + ", " + rs.getString("email") + ", " + rs.getString("username") + ", " + rs.getString("password"))
+            }
+            created = true;
+          }
+          else println("That username already exists")
         }
-        else println("That username already exists")
+        else println("Invalid email format")
       }
       else println("Please fill in all fields")
     } finally {
       conn.close()
     }
-
-    Ok(views.html.create())
+    if(created){
+      Ok(views.html.loggedIn(username))
+    }
+    else
+      Ok(views.html.create())
   }
 
   def explore() = Action { implicit request: Request[AnyContent] =>
@@ -108,5 +116,18 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   def tutorial() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.tutorial())
   }
+  private val emailRegex = """^[a-zA-Z0-9\.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$""".r
+  def checkEmail(e: String): Boolean = e match{
+    case null                                           => false
+    case e if e.trim.isEmpty                            => false
+    case e if emailRegex.findFirstMatchIn(e).isDefined  => true
+    case _                                              => false
+  }
+  def checkPhone(phone: String):Boolean = {
+    var phoneUtil = PhoneNumberUtil.getInstance()
+    var numberProto = phoneUtil.parse("phone_number", "")
+    phoneUtil.isValidNumber(numberProto) == true
+  }
+
 
 }

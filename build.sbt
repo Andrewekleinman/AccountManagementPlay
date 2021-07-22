@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
       guice,
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
       "org.postgresql" % "postgresql" % "9.3-1102-jdbc41",
-
+      "com.googlecode.libphonenumber" % "libphonenumber" % "8.12.10",
     ),
     scalacOptions ++= Seq(
       "-feature",

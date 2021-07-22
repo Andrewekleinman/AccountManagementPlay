@@ -11,6 +11,8 @@ GET     /newAccount                         controllers.HomeController.newAccoun
 GET     /logAttempt                         controllers.HomeController.logAttempt(username,password)
 GET     /explore                            controllers.HomeController.explore()
 GET     /tutorial                           controllers.HomeController.tutorial()
+GET     /nothing                            controllers.HomeController.nothing()
+
 
 
 # Map static resources from the /public folder to the /assets URL path

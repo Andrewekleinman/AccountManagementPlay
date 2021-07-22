@@ -41,7 +41,7 @@ Seq[Any](format.raw/*1.4*/("""
       </label>
     </div>
     <div>
-      <button onclick="window.location.href = '/logAttempt?username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Create Account</button>
+      <button onclick="window.location.href = '/logAttempt?username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Log In</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -67,8 +67,8 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/log.scala.html
-                  HASH: 974412331e0583e8ac63cb520a3fa073ed74ec82
-                  MATRIX: 720->1|816->3|848->10|867->21|906->23|936->27|1869->930
+                  HASH: a2ad54f1d44e7222b9b98aea33dc99a4ca522c1c
+                  MATRIX: 720->1|816->3|848->10|867->21|906->23|936->27|1861->922
                   LINES: 21->1|26->1|28->3|28->3|28->3|29->4|52->27
                   -- GENERATED --
               */

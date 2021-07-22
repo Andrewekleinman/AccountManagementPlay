@@ -39,8 +39,7 @@ Seq[Any](format.raw/*7.32*/("""
     <link rel="stylesheet" media="screen" href='"""),_display_(/*15.50*/routes/*15.56*/.Assets.versioned("stylesheets/main.css")),format.raw/*15.97*/("""'>
     <link rel="stylesheet" media="screen" href='"""),_display_(/*16.50*/routes/*16.56*/.Assets.versioned("stylesheets/prism.css")),format.raw/*16.98*/("""'>
     <link rel="shortcut icon" type="image/png" href='"""),_display_(/*17.55*/routes/*17.61*/.Assets.versioned("images/favicon.png")),format.raw/*17.100*/("""'>
-    <script src='"""),_display_(/*18.19*/routes/*18.25*/.Assets.versioned("javascripts/hello.js")),format.raw/*18.66*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*19.19*/routes/*19.25*/.Assets.versioned("javascripts/prism.js")),format.raw/*19.66*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*18.19*/routes/*18.25*/.Assets.versioned("javascripts/prism.js")),format.raw/*18.66*/("""' type="text/javascript"></script>
 </head>
 
 <body>
@@ -50,8 +49,8 @@ Seq[Any](format.raw/*7.32*/("""
             <h1>registration</h1>
         </div>
     </section>
-    """),_display_(/*29.6*/content),format.raw/*29.13*/("""
-"""),format.raw/*30.1*/("""</body>
+    """),_display_(/*28.6*/content),format.raw/*28.13*/("""
+"""),format.raw/*29.1*/("""</body>
 
 </html>
 """))
@@ -71,9 +70,9 @@ Seq[Any](format.raw/*7.32*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/main.scala.html
-                  HASH: e340cb3368e0ae9facfc5783a881fc87801c903d
-                  MATRIX: 998->272|1123->302|1153->306|1237->363|1263->368|1425->503|1440->509|1502->550|1582->603|1597->609|1660->651|1745->709|1760->715|1821->754|1870->776|1885->782|1947->823|2028->877|2043->883|2105->924|2389->1182|2417->1189|2446->1191
-                  LINES: 26->7|31->7|33->9|37->13|37->13|39->15|39->15|39->15|40->16|40->16|40->16|41->17|41->17|41->17|42->18|42->18|42->18|43->19|43->19|43->19|53->29|53->29|54->30
+                  HASH: b4f6fa09717ccc6039ba893ab46ec4169b121e8f
+                  MATRIX: 998->272|1123->302|1153->306|1237->363|1263->368|1425->503|1440->509|1502->550|1582->603|1597->609|1660->651|1745->709|1760->715|1821->754|1870->776|1885->782|1947->823|2231->1081|2259->1088|2288->1090
+                  LINES: 26->7|31->7|33->9|37->13|37->13|39->15|39->15|39->15|40->16|40->16|40->16|41->17|41->17|41->17|42->18|42->18|42->18|52->28|52->28|53->29
                   -- GENERATED --
               */
           
