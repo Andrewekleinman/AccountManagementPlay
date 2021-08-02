@@ -26,13 +26,16 @@ object createorlog extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
 Seq[Any](format.raw/*1.4*/("""
 
   """),_display_(/*3.4*/main("createorlog")/*3.23*/ {_display_(Seq[Any](format.raw/*3.25*/("""
-    """),format.raw/*4.5*/("""<div>
+    """),format.raw/*4.5*/("""<center>
+      <br>
+    <div>
       Create Account or Log In
       <p></p>
       <button onclick="window.location.href = '/create'">Create Account</button>
       <button onclick="window.location.href = '/log'">Log In</button>
     </div>
-  """)))}),format.raw/*10.4*/("""
+    </center>
+  """)))}),format.raw/*13.4*/("""
 """))
       }
     }
@@ -50,9 +53,9 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/createorlog.scala.html
-                  HASH: 07809f85052f310881118bef05e1983786e0eaf1
-                  MATRIX: 728->1|824->3|856->10|883->29|922->31|954->37|1206->259
-                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|35->10
+                  HASH: bfe1be1332ca0f04a2110f076ac83b854196bf73
+                  MATRIX: 728->1|824->3|856->10|883->29|922->31|954->37|1247->300
+                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|38->13
                   -- GENERATED --
               */
           

@@ -25,17 +25,8 @@ object commonSidebar extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.
 
 Seq[Any](format.raw/*1.4*/("""
 """),_display_(/*2.2*/defining(play.core.PlayVersion.current)/*2.41*/ { version =>_display_(Seq[Any](format.raw/*2.54*/("""
-"""),format.raw/*3.1*/("""<h3>Table of Contents</h3>
 
-<h3>Related Resources</h3>
-<ul>
-  <li><a href="https://playframework.com/documentation/"""),_display_(/*7.57*/version),format.raw/*7.64*/("""" target="_blank">Play documentation</a></li>
-  <li><a href="https://discuss.lightbend.com/c/play/" target="_blank">Forum</a></li>
-  <li><a href="//gitter.im/playframework/playframework" target="_blank">Gitter Channel</a></li>
-  <li><a href="//stackoverflow.com/questions/tagged/playframework" target="_blank">Stackoverflow</a></li>
-  <li><a href="//lightbend.com/how" target="_blank">Professional support</a></li>
-</ul>
-""")))}),format.raw/*13.2*/("""
+""")))}),format.raw/*4.2*/("""
 """))
       }
     }
@@ -53,9 +44,9 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/commonSidebar.scala.html
-                  HASH: 21a600c883330476ef6da19b6e5719faa7e8ab20
-                  MATRIX: 730->1|826->3|854->6|901->45|951->58|979->60|1125->180|1152->187|1610->615
-                  LINES: 21->1|26->1|27->2|27->2|27->2|28->3|32->7|32->7|38->13
+                  HASH: e5905afb28a2da6eec163d3fb3468b0308deb89b
+                  MATRIX: 730->1|826->3|854->6|901->45|951->58|985->63
+                  LINES: 21->1|26->1|27->2|27->2|27->2|29->4
                   -- GENERATED --
               */
           

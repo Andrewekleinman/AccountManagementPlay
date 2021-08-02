@@ -26,7 +26,9 @@ object log extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFo
 Seq[Any](format.raw/*1.4*/("""
 
   """),_display_(/*3.4*/main("log")/*3.15*/ {_display_(Seq[Any](format.raw/*3.17*/("""
-  """),format.raw/*4.3*/("""<div class="Login">
+    """),format.raw/*4.5*/("""<center>
+      <br>
+  <div class="Login">
     <div>
       <label><b>Username</b></label>
       <input id="username" type="text" v-model = "input.username" placeholder="Enter Username" required>
@@ -35,21 +37,17 @@ Seq[Any](format.raw/*1.4*/("""
       <label><b>Password</b></label>
       <input id="password" type="password" v-model = "input.password" placeholder="Enter Password" required>
     </div>
-    <div>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+
     <div>
       <button onclick="window.location.href = '/logAttempt?username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Log In</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button onclick="window.location.href='/'">Cancel</button>
-      <a href="#">Forgot password?</a>
     </div>
   </div>
-  """)))}),format.raw/*27.4*/("""
+    </center>
+  """)))}),format.raw/*25.4*/("""
 """))
       }
     }
@@ -67,9 +65,9 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/log.scala.html
-                  HASH: a2ad54f1d44e7222b9b98aea33dc99a4ca522c1c
-                  MATRIX: 720->1|816->3|848->10|867->21|906->23|936->27|1861->922
-                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|52->27
+                  HASH: ada75af2e59b022d79cf53041090cb93b0fe5c28
+                  MATRIX: 720->1|816->3|848->10|867->21|906->23|938->29|1731->792
+                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|50->25
                   -- GENERATED --
               */
           
