@@ -17,12 +17,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
-    def tutorial: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.tutorial",
+    // @LINE:12
+    def newAccount: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.newAccount",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tutorial"})
+        function(firstname0,lastname1,phone2,email3,username4,password5) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "newAccount" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("firstname", firstname0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("lastname", lastname1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("phone", phone2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email3), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username4), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password5)])})
         }
       """
     )
@@ -37,17 +37,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
-    def newAccount: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.newAccount",
+    // @LINE:9
+    def create2: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.create2",
       """
-        function(name0,phone1,email2,username3,password4) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "newAccount/{name,phone,email,username,password}" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("name", name0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("phone", phone1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username3), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password4)])})
+        function(firstname0,lastname1,phone2,email3,username4,password5) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "create2" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("firstname", firstname0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("lastname", lastname1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("phone", phone2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("email", email3), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username4), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password5)])})
         }
       """
     )
   
-    // @LINE:11
+    // @LINE:13
     def logAttempt: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.logAttempt",
       """
@@ -57,17 +57,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
-    def explore: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.explore",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "explore"})
-        }
-      """
-    )
-  
-    // @LINE:9
+    // @LINE:10
     def log: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.log",
       """
@@ -83,6 +73,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def log2: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.log2",
+      """
+        function(username0,password1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "log2" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1)])})
         }
       """
     )

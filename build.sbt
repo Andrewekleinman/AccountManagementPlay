@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
       "org.postgresql" % "postgresql" % "9.3-1102-jdbc41",
       "com.googlecode.libphonenumber" % "libphonenumber" % "8.12.10",
+      "commons-codec" % "commons-codec" % "1.15",
     ),
     scalacOptions ++= Seq(
       "-feature",

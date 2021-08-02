@@ -58,8 +58,8 @@ Seq[Any](format.raw/*1.4*/("""
   </div>
 
 
-  <button onclick="window.location.href = '/newAccount?name='+document.getElementById('firstname').value
-          +document.getElementById('lastname').value
+  <button onclick="window.location.href = '/newAccount?firstname='+document.getElementById('firstname').value
+          +'&lastname='+document.getElementById('lastname').value
           +'&phone='+document.getElementById('phoneNumber').value+'&email='+document.getElementById('email').value+'&username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Create Account</button>
   <div class="container" style="background-color:#f1f1f1">
     <button onclick="window.location.href='/'">Cancel</button>
@@ -67,20 +67,21 @@ Seq[Any](format.raw/*1.4*/("""
   </div>
   </div>
   <script>
-          String.prototype.hashCode = function() """),format.raw/*45.50*/("""{"""),format.raw/*45.51*/("""
-            """),format.raw/*46.13*/("""var hash = 0;
-            if (this.length == 0) """),format.raw/*47.35*/("""{"""),format.raw/*47.36*/("""
-              """),format.raw/*48.15*/("""return hash;
-            """),format.raw/*49.13*/("""}"""),format.raw/*49.14*/("""
-            """),format.raw/*50.13*/("""for (var i = 0; i < this.length; i++) """),format.raw/*50.51*/("""{"""),format.raw/*50.52*/("""
-              """),format.raw/*51.15*/("""var char = this.charCodeAt(i);
+          var encryptor = new StandardPBEStringEncryptor();
+          String.prototype.hashCode = function() """),format.raw/*46.50*/("""{"""),format.raw/*46.51*/("""
+            """),format.raw/*47.13*/("""var hash = 0;
+            if (this.length == 0) """),format.raw/*48.35*/("""{"""),format.raw/*48.36*/("""
+              """),format.raw/*49.15*/("""return hash;
+            """),format.raw/*50.13*/("""}"""),format.raw/*50.14*/("""
+            """),format.raw/*51.13*/("""for (var i = 0; i < this.length; i++) """),format.raw/*51.51*/("""{"""),format.raw/*51.52*/("""
+              """),format.raw/*52.15*/("""var char = this.charCodeAt(i);
               hash = ((hash<<5)-hash)+char;
               hash = hash & hash; // Convert to 32bit integer
-            """),format.raw/*54.13*/("""}"""),format.raw/*54.14*/("""
-            """),format.raw/*55.13*/("""return hash;
-          """),format.raw/*56.11*/("""}"""),format.raw/*56.12*/("""
-  """),format.raw/*57.3*/("""</script>
-  """)))}),format.raw/*58.4*/("""
+            """),format.raw/*55.13*/("""}"""),format.raw/*55.14*/("""
+            """),format.raw/*56.13*/("""return hash;
+          """),format.raw/*57.11*/("""}"""),format.raw/*57.12*/("""
+  """),format.raw/*58.3*/("""</script>
+  """)))}),format.raw/*59.4*/("""
 """))
       }
     }
@@ -98,9 +99,9 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/create.scala.html
-                  HASH: a4f1366c94be4154886091854d44dc1f1f56a8ec
-                  MATRIX: 723->1|819->3|851->10|873->24|912->26|942->30|2739->1799|2768->1800|2810->1814|2887->1863|2916->1864|2960->1880|3014->1906|3043->1907|3085->1921|3151->1959|3180->1960|3224->1976|3404->2128|3433->2129|3475->2143|3527->2167|3556->2168|3587->2172|3631->2186
-                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|70->45|70->45|71->46|72->47|72->47|73->48|74->49|74->49|75->50|75->50|75->50|76->51|79->54|79->54|80->55|81->56|81->56|82->57|83->58
+                  HASH: 7946d8975cac9caa839972ce731f25d3b391bb9d
+                  MATRIX: 723->1|819->3|851->10|873->24|912->26|942->30|2818->1878|2847->1879|2889->1893|2966->1942|2995->1943|3039->1959|3093->1985|3122->1986|3164->2000|3230->2038|3259->2039|3303->2055|3483->2207|3512->2208|3554->2222|3606->2246|3635->2247|3666->2251|3710->2265
+                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|71->46|71->46|72->47|73->48|73->48|74->49|75->50|75->50|76->51|76->51|76->51|77->52|80->55|80->55|81->56|82->57|82->57|83->58|84->59
                   -- GENERATED --
               */
           

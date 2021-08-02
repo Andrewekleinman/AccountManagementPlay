@@ -1,16 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:124:3: not found: value PhoneNumberUtil[0m
-[0m[[0m[31merror[0m] [0m[0m  PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:125:3: not found: value PhoneNumber[0m
-[0m[[0m[31merror[0m] [0m[0m  PhoneNumber numberProto = phoneUtil.parse("phone_number", "");[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:126:3: not found: value phoneUtil[0m
-[0m[[0m[31merror[0m] [0m[0m  phoneUtil.isValidNumber(numberProto) == true ? "valid" : "phone no not valid"[0m
-[0m[[0m[31merror[0m] [0m[0m  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:126:27: not found: value numberProto[0m
-[0m[[0m[31merror[0m] [0m[0m  phoneUtil.isValidNumber(numberProto) == true ? "valid" : "phone no not valid"[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:126:48: value ? is not a member of Boolean[0m
-[0m[[0m[31merror[0m] [0m[0m  phoneUtil.isValidNumber(numberProto) == true ? "valid" : "phone no not valid"[0m
-[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
-[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/andrew/Downloads/play-samples-play-scala-hello-world-tutorial-2/app/controllers/HomeController.scala:89:120: not found: value name[0m
+[0m[[0m[31merror[0m] [0m[0m              stm.execute("insert into users (firstname,lastname, phoneNumber, email, username, password) values ('" + name + "', '" + phone + "', '" + email + "', '" + username + "', '" + password + "');")[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

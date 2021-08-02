@@ -26,19 +26,16 @@ object commonSidebar extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.
 Seq[Any](format.raw/*1.4*/("""
 """),_display_(/*2.2*/defining(play.core.PlayVersion.current)/*2.41*/ { version =>_display_(Seq[Any](format.raw/*2.54*/("""
 """),format.raw/*3.1*/("""<h3>Table of Contents</h3>
-<ul>
-  <li><a href=""""),_display_(/*5.17*/routes/*5.23*/.HomeController.explore()),format.raw/*5.48*/("""">Play application overview</a>
-  <li><a href=""""),_display_(/*6.17*/routes/*6.23*/.HomeController.tutorial()),format.raw/*6.49*/("""">Implementing Hello World</a>
-</ul>
+
 <h3>Related Resources</h3>
 <ul>
-  <li><a href="https://playframework.com/documentation/"""),_display_(/*10.57*/version),format.raw/*10.64*/("""" target="_blank">Play documentation</a></li>
+  <li><a href="https://playframework.com/documentation/"""),_display_(/*7.57*/version),format.raw/*7.64*/("""" target="_blank">Play documentation</a></li>
   <li><a href="https://discuss.lightbend.com/c/play/" target="_blank">Forum</a></li>
   <li><a href="//gitter.im/playframework/playframework" target="_blank">Gitter Channel</a></li>
   <li><a href="//stackoverflow.com/questions/tagged/playframework" target="_blank">Stackoverflow</a></li>
   <li><a href="//lightbend.com/how" target="_blank">Professional support</a></li>
 </ul>
-""")))}),format.raw/*16.2*/("""
+""")))}),format.raw/*13.2*/("""
 """))
       }
     }
@@ -56,9 +53,9 @@ Seq[Any](format.raw/*1.4*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/commonSidebar.scala.html
-                  HASH: 4be81cf8e32f17b9ecb8a67039e2a4f08df3ce42
-                  MATRIX: 730->1|826->3|854->6|901->45|951->58|979->60|1055->110|1069->116|1114->141|1189->190|1203->196|1249->222|1405->351|1433->358|1891->786
-                  LINES: 21->1|26->1|27->2|27->2|27->2|28->3|30->5|30->5|30->5|31->6|31->6|31->6|35->10|35->10|41->16
+                  HASH: 21a600c883330476ef6da19b6e5719faa7e8ab20
+                  MATRIX: 730->1|826->3|854->6|901->45|951->58|979->60|1125->180|1152->187|1610->615
+                  LINES: 21->1|26->1|27->2|27->2|27->2|28->3|32->7|32->7|38->13
                   -- GENERATED --
               */
           

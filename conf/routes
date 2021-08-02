@@ -6,11 +6,11 @@
 # An example controller showing a sample home page
 GET     /                                   controllers.HomeController.createOrLog()
 GET     /create                             controllers.HomeController.create()
+GET     /create2                            controllers.HomeController.create2(firstname,lastname,phone,email,username,password)
 GET     /log                                controllers.HomeController.log()
-GET     /newAccount                         controllers.HomeController.newAccount(name,phone,email,username,password)
+GET     /log2                               controllers.HomeController.log2(username,password)
+GET     /newAccount                         controllers.HomeController.newAccount(firstname,lastname,phone,email,username,password)
 GET     /logAttempt                         controllers.HomeController.logAttempt(username,password)
-GET     /explore                            controllers.HomeController.explore()
-GET     /tutorial                           controllers.HomeController.tutorial()
 GET     /nothing                            controllers.HomeController.nothing()
 
 

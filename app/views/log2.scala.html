@@ -1,0 +1,27 @@
+@(username:String,password:String)
+
+  @main("log") {
+  <div class="Login">
+    <div>
+      <label><b>Username</b></label>
+      <input id="username" type="text" v-model = "input.username" value="@username" placeholder="Enter Username" required>
+    </div>
+    <div>
+      <label><b>Password</b></label>
+      <input id="password" type="password" v-model = "input.password" value="@password" placeholder="Enter Password" required>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+    <div>
+      <button onclick="window.location.href = '/logAttempt?username='+document.getElementById('username').value+'&password='+document.getElementById('password').value">Log In</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button onclick="window.location.href='/'">Cancel</button>
+      <a href="#">Forgot password?</a>
+    </div>
+  </div>
+  }

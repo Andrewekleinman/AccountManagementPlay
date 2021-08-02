@@ -16,10 +16,10 @@ package controllers {
     }
 
   
-    // @LINE:13
-    def tutorial(): Call = {
+    // @LINE:12
+    def newAccount(firstname:String, lastname:String, phone:String, email:String, username:String, password:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "tutorial")
+      Call("GET", _prefix + { _defaultPrefix } + "newAccount" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("firstname", firstname)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("lastname", lastname)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("phone", phone)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("email", email)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
     // @LINE:8
@@ -28,25 +28,19 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "create")
     }
   
-    // @LINE:15
-    def newAccount(name:String, phone:String, email:String, username:String, password:String): Call = {
+    // @LINE:9
+    def create2(firstname:String, lastname:String, phone:String, email:String, username:String, password:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "newAccount/{name,phone,email,username,password}" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("phone", phone)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("email", email)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
+      Call("GET", _prefix + { _defaultPrefix } + "create2" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("firstname", firstname)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("lastname", lastname)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("phone", phone)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("email", email)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:11
+    // @LINE:13
     def logAttempt(username:String, password:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "logAttempt" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:12
-    def explore(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "explore")
-    }
-  
-    // @LINE:9
+    // @LINE:10
     def log(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "log")
@@ -56,6 +50,12 @@ package controllers {
     def createOrLog(): Call = {
       
       Call("GET", _prefix)
+    }
+  
+    // @LINE:11
+    def log2(username:String, password:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "log2" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
     // @LINE:14

@@ -1,30 +1,30 @@
-@()
+@(firstname:String,lastname:String,phone:String,email:String,username:String,password:String)
 
-  @main("create") {
+  @main("create2") {
   <div class="CreateAccount">
   <div>
     <label><b>Username</b></label>
-    <input id="username" type="text" v-model = "input.username" placeholder="Enter Username" required>
+    <input id="username" type="text" v-model = "input.username" value="@username" placeholder="Enter Username" required>
   </div>
   <div>
     <label><b>Password</b></label>
-    <input id="password" type="password" v-model = "input.password" placeholder="Enter Password" required>
+    <input id="password" type="password" v-model = "input.password" value="@password" placeholder="Enter Password" required>
   </div>
   <div>
     <label><b>First Name</b></label>
-    <input id="firstname" type="text" v-model = "input.firstname" placeholder="Enter First Name"  required>
+    <input id="firstname" type="text" v-model = "input.firstname" value="@firstname" placeholder="Enter First Name" required>
   </div>
   <div>
     <label><b>Last Name</b></label>
-    <input id="lastname" type="text" v-model = "input.lastname" placeholder="Enter Last Name" required>
+    <input id="lastname" type="text" v-model = "input.lastname" value="@lastname" placeholder="Enter Last Name"required>
   </div>
   <div>
     <label><b>Email</b></label>
-    <input id="email" type="email" v-model = "input.email" placeholder="Enter Email" required>
+    <input id="email" type="email" value="@email" placeholder="Enter Email" required>
   </div>
     <div>
     <label><b>Phone</b></label>
-    <input id="phoneNumber" type="text" v-model = "input.phone" placeholder="Enter Phone number" required>
+    <input id="phoneNumber" type="text" v-model = "input.phone" value="@phone" placeholder="Enter Phone Number" required>
   </div>
   <div>
     <label>
@@ -42,7 +42,6 @@
   </div>
   </div>
   <script>
-          var encryptor = new StandardPBEStringEncryptor();
           String.prototype.hashCode = function() {
             var hash = 0;
             if (this.length == 0) {
