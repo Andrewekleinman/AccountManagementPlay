@@ -37,10 +37,10 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def create() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.create())
+    Ok(views.html.create.render())
   }
   def create2(firstname:String,lastname:String,phone:String,email:String,username:String,password:String) = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.create2(firstname,lastname,phone,email,username,password))
+    Ok(views.html.create2.render(firstname,lastname,phone,email,username,password))
   }
 
   def log() = Action { implicit request: Request[AnyContent] =>
