@@ -69,13 +69,17 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
       conn.close()
     }
     if(valid == true){
-      Ok(views.html.loggedIn(username))
+      Redirect(routes.HomeController.logSuccess(username))
+        .flashing()
     }
     else {
       println("invalid username or password")
       Redirect(routes.HomeController.log2(username,password))
         .flashing("error" -> "Invalid username/password.")
     }
+  }
+  def logSuccess(username: String)= Action { implicit request: Request[AnyContent] =>
+    Ok(views.html.loggedIn(username))
   }
 
   def newAccount(firstname:String,lastname:String,phone:String,email:String,username:String,password:String) = Action { implicit request: Request[AnyContent] =>
@@ -117,11 +121,12 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
       conn.close()
     }
     if(created){
-      Ok(views.html.loggedIn(username))
+      Redirect(routes.HomeController.logSuccess(username))
+        .flashing()
     }
     else
       Redirect(routes.HomeController.create2(firstname,lastname,phone,email,username,password))
-        .flashing("error" -> "Invalid username/password.")
+        .flashing("error" -> "Invalid Information")
   }
 
 

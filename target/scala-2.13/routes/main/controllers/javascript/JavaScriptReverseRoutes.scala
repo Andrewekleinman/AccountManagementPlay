@@ -17,7 +17,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:13
     def newAccount: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.newAccount",
       """
@@ -47,12 +47,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:14
     def logAttempt: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.logAttempt",
       """
         function(username0,password1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logAttempt" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1)])})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def logSuccess: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.logSuccess",
+      """
+        function(username0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logSuccess" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username0)])})
         }
       """
     )
@@ -87,7 +97,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
+    // @LINE:15
     def nothing: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.nothing",
       """
@@ -99,7 +109,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -107,7 +117,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:20
+    // @LINE:21
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
