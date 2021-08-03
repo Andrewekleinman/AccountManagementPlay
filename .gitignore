@@ -1,0 +1,10 @@
+.g8/form
+.idea
+project
+logs
+target
+.DS_Store
+*.DS_Store
+LICENSE
+NOTICE
+
